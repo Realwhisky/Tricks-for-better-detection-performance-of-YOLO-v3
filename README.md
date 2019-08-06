@@ -22,7 +22,11 @@ Detection effect test of YOLO v3 and DEAN(improved) network. YOLO v3 is in the l
 
 ## references
 [1] Redmon, J., & Farhadi, A., “Yolov3: An incremental improvement,” arXiv preprint arXiv:1804.02767 (2018).
+
 [2] Fu, J., Liu, J., Tian, H., Li, Y., Bao, Y., Fang, Z., & Lu, H., “Dual attention network for scene segmentation,” Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, 3146-3154 (2019).
+
 [3] Ronneberger, O., Fischer, P., & Brox, T., “U-net: Convolutional networks for biomedical image segmentation,” International Conference on Medical image computing and computer-assisted intervention, Springer, Cham, 234-241 (2015).
+
 [4] Lin, T. Y., Goyal, P., Girshick, R., He, K., & Dollár, P., “Focal loss for dense object detection,” Proceedings of the IEEE international conference on computer vision, 2980-2988 (2017).
+
 [5] Razakarivony, Sebastien, and Frederic Jurie., “Vehicle detection in aerial imagery: A small target detection benchmark.” Journal of Visual Communication and Image Representation, 34, 187-203 (2016).
