@@ -15,7 +15,7 @@ Deconvolution structure for feature upsampling: The YOLO v3 network extracts dep
 Online hard examples learning with Focal Loss for better classification. YOLO v3 uses the cross-entropy loss function for training. As a single-stage detector, the quantity gap between the positive and negative samples is huge. Moreover, since the number of simple samples is large and easy to be discriminated by the model, its parameter update cannot improve the judgment ability of the model, making the entire training inefficient. Focal Loss improves this situation by relatively suppressing simple samples, but the imbalance problem of samples is not well resolved. We introduce online hard example learning with Focal Loss in network training to improve this situation.
 
 ![demo](https://github.com/Realwhisky/Tricks-for-better-performance-of-YOLO-v3/blob/master/OH-Focal%20Loss.jpg)
-(formula and pictures are form my EI retrieval paper)
+(formula and pictures are from my EI retrieval paper)
 
 ## Test
 Detection effect test of YOLO v3 and DEAN(improved) network. YOLO v3 is in the left side of first row, the picture on the right is the magnified details, DEAN is in second row correspondingly and the third row is the results of DEAN in more aerial imageries:
