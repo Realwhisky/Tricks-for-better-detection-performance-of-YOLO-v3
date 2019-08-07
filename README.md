@@ -1,18 +1,18 @@
 # Tricks-for-better-performance-of-YOLO-v3
 My tricks for better performance of small targets detection, already tested on VEDAI dataset
 
-## A:
-Spatial self-attention and channel self-attention module for feature refinement: Attention plays an important role in the way humans perceive their surrounding environment. When looking at a picture, people always focus on the highlighted parts and selectively obtain information to make corresponding judgments. Inspired by this, we combine a dual selfattention network of position and channel to learn higher-quality convolutional features, where self means autonomous learning and adaptive weight allocation between feature maps and channels.
+## A:Spatial self-attention and channel self-attention module for feature refinement
+Attention plays an important role in the way humans perceive their surrounding environment. When looking at a picture, people always focus on the highlighted parts and selectively obtain information to make corresponding judgments. Inspired by this, we combine a dual selfattention network of position and channel to learn higher-quality convolutional features, where self means autonomous learning and adaptive weight allocation between feature maps and channels.
 
 ![demo](https://github.com/Realwhisky/Tricks-for-better-performance-of-YOLO-v3/blob/master/Attention.jpg)
 
-## B:
-Deconvolution structure for feature upsampling: The YOLO v3 network extracts depth features and encodes them. It generates feature maps of different resolutions through an interpolation method. However, this simple upsampling method cannot use the underlying semantic information felicitously. To solve this problem, the FCN and U-Net algorithms in the field of image segmentation proposed the deconvolution operation to recover deep semantic information and gained preferable effect. Inspired by this work, we adjust the upsampling mode by substituting deconvolution for interpolation.
+## B:Deconvolution structure for feature upsampling
+The YOLO v3 network extracts depth features and encodes them. It generates feature maps of different resolutions through an interpolation method. However, this simple upsampling method cannot use the underlying semantic information felicitously. To solve this problem, the FCN and U-Net algorithms in the field of image segmentation proposed the deconvolution operation to recover deep semantic information and gained preferable effect. Inspired by this work, we adjust the upsampling mode by substituting deconvolution for interpolation.
 
 ![demo](https://github.com/Realwhisky/Tricks-for-better-performance-of-YOLO-v3/blob/master/deconvolution.jpg)
 
-## C:
-Online hard examples learning with Focal Loss for better classification. YOLO v3 uses the cross-entropy loss function for training. As a single-stage detector, the quantity gap between the positive and negative samples is huge. Moreover, since the number of simple samples is large and easy to be discriminated by the model, its parameter update cannot improve the judgment ability of the model, making the entire training inefficient. Focal Loss improves this situation by relatively suppressing simple samples, but the imbalance problem of samples is not well resolved. We introduce online hard example learning with Focal Loss in network training to improve this situation.
+## C:Online hard examples learning with Focal Loss for better classification
+YOLO v3 uses the cross-entropy loss function for training. As a single-stage detector, the quantity gap between the positive and negative samples is huge. Moreover, since the number of simple samples is large and easy to be discriminated by the model, its parameter update cannot improve the judgment ability of the model, making the entire training inefficient. Focal Loss improves this situation by relatively suppressing simple samples, but the imbalance problem of samples is not well resolved. We introduce online hard example learning with Focal Loss in network training to improve this situation.
 
 ![demo](https://github.com/Realwhisky/Tricks-for-better-performance-of-YOLO-v3/blob/master/OH-Focal%20Loss.jpg)
 (formula and pictures are from my EI retrieval paper)
