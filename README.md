@@ -7,6 +7,11 @@ My tricks for better performance of small targets detection, already tested on V
 
 
 
+
+
+
+
+
 ### A : Spatial self-attention and channel self-attention module for feature refinement
 Attention plays an important role in the way humans perceive their surrounding environment. When looking at a picture, people always focus on the highlighted parts and selectively obtain information to make corresponding judgments. Inspired by this, we combine a dual selfattention network of position and channel to learn higher-quality convolutional features, where self means autonomous learning and adaptive weight allocation between feature maps and channels.
 
