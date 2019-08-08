@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -6,7 +5,9 @@ from torch.autograd import Variable
 from lib.utils.box_utils import match, log_sum_exp
 
 
-class MultiBoxLoss(nn.Module):
+### 这里使用MultiBoxLoss类，后面计算分类损失的时候换损失函数 ###
+
+class MultiBoxLoss(nn.Module):   
     """SSD Weighted Loss Function
     Compute Targets:
         1) Produce Confidence Target Indices by matching  ground truth boxes
@@ -132,6 +133,10 @@ class MultiBoxLoss(nn.Module):
         loss_c/=((1)*N)#.double()
         return loss_l,loss_c
 
+    
+    ### 定义的改动的Focal loss, 进一步精简了负样本的学习比例，主要是重点学习最难分类的难样本，而不是为了拟合所有样本（包括一些没有必要学习的样本）而牺牲模型的判断能力
+    ### 防止正负样本不均衡，比例设为1:3，给难样本加了1.3的权重（实验结果）
+    
     def OH_FOCAL_loss(self, inputspos, inputsneg, targetspos, targetsneg):
         '''
         weighted-OHEM-loss ---by whisky
