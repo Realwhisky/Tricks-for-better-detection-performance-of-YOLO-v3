@@ -2,15 +2,9 @@
 
 My tricks for better performance of small targets detection, already tested on VEDAI dataset
 
-## 《Dual Efficient Self-attention Network for Target Detection in Aerial Imagery》 
-
-
-
-
-
-
-
-
+## 《Dual Efficient Self-attention Network for Target Detection in Aerial Imagery》 （DEAN）
+DEAN mainly builds a new structure consisting of the DAN-ResNet block with deconvolution model for small targets detection
+and an OH-Focal Loss function is proposed for network training.
 
 ### A : Spatial self-attention and channel self-attention module for feature refinement
 Attention plays an important role in the way humans perceive their surrounding environment. When looking at a picture, people always focus on the highlighted parts and selectively obtain information to make corresponding judgments. Inspired by this, we combine a dual selfattention network of position and channel to learn higher-quality convolutional features, where self means autonomous learning and adaptive weight allocation between feature maps and channels.
