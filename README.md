@@ -2,7 +2,7 @@
 
 My tricks for better performance of small targets detection, already tested on VEDAI dataset
 
-### 《Dual Efficient Self-attention Network for Target Detection in Aerial Imagery》 
+## 《Dual Efficient Self-attention Network for Target Detection in Aerial Imagery》 
 
 
 ### A : Spatial self-attention and channel self-attention module for feature refinement
