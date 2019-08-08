@@ -10,7 +10,7 @@ class _router_v3(nn.Module):
             self.up = nn.Upsample(scale_factor=2, mode='bilinear')
         else:
             self.up = nn.ConvTranspose2d(oup, oup, 2, stride=2)   
-			# 可尝试反卷积（转置卷积）的方式，效果不错
+		      ### 可尝试反卷积（转置卷积）的方式去concatenate ， 效果还是有的 ~~~
        # self.conv4 = nn.ConvTranspose2d(128, 64, kernel_size=4, stride=2, padding=1)
 
     def forward(self, x1, x2):
