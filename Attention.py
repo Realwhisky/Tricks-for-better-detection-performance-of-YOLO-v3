@@ -1,9 +1,12 @@
 class Flatten(nn.Module):
     def forward(self, x):
         return x.view(x.size(0), -1)
-        #x.size(0)指batchsize的值. -1指在不告诉函数有多少列的情况下，根据原tensor数据和batchsize自动分配列数。
+        
 
-class ChannelAtten(nn.Module):
+### ChannelAtten 通道注意力 ###
+### 先在每个通道做 avg & max pool,然后通过一个MLP学习 pool后的 refined values ###
+
+class ChannelAtten(nn.Module):           
     def __init__(self, teacher_channels, reduction_ratio=16, pool_type = 'avg'):
         super(ChannelAtten, self).__init__()
         self.teacher_channels = teacher_channels
@@ -43,9 +46,11 @@ class BasicConv(nn.Module):
         if self.relu is not None:
             x = self.relu(x)
         return x
+    
+### SpatialAtten 空间注意力（在ChannelAtten后的基础上做的） ###
+### 先Channel-refined features做 avg & max pool,然后通过一个7*7的卷积核学习 pool后的 values ###
 
-
-class SpatialAtten(nn.Module):
+class SpatialAtten(nn.Module):                  # 
     def __init__(self):
         super(SpatialAtten, self).__init__()
         kernel_size = 7
